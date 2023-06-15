@@ -18,6 +18,7 @@ public class Tab2GridPane extends GridPane {
     public Tab2GridPane() {
         // это конструктор ---> работает после создания объекта через new Tab2GridPane();
         TextArea textArea = new TextArea();
+        // передача текстовой зоны в панель Tab2GridPane (используется метод, унаследованный от GridPane)
         add(textArea, 0, 0);
         textArea.setMaxHeight(Double.MAX_VALUE);
         textArea.setMaxWidth(Double.MAX_VALUE);

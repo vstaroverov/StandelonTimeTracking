@@ -14,6 +14,9 @@ import javafx.scene.layout.StackPane;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainGridPane extends GridPane {
 
@@ -49,6 +52,19 @@ public class MainGridPane extends GridPane {
 
         //кнопка вкл-выкл
         ToggleButton startEndButton = new ToggleButton("Начать");
+
+        /*//таймер на кнопку начать (на потом)
+        Timer timerStartEnd = new Timer();
+        Label labelTimerStartEnd = new Label();
+        timerStartEnd.scheduleAtFixedRate(new TimerTask() {
+            int i = 0;
+            @Override
+            public void run() {
+                labelTimerStartEnd.setText("Прошло" + i + "сек");
+                i++;
+            }
+        }, 0, 1000);*/
+
 
         //таблица для списка и длительности
         TableView<ActivityRow> activityTableView = new TableView<>();

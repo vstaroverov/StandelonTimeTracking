@@ -4,29 +4,8 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
-/**
- * Идеи для улучшение Backlog
- * 1. Умный список для выбора активности (готово)
- * 2. Пироговая диаграмма для разделения дня на активности
- * 3. стобики-диаграмма прогресса
- * 4. Записная книжка для идей с параметрами и фильтром
- * 5. Файл для хранения и подгрузки данных (готово)
- * 6. Сохранять местополодение и размер окна программы
- * 7. Поле активность обязательно к заполнению
- * 8. Автоматическая остановка при закрытии программы
- * 9. Баг при закрытии нет даты завершения
- * 10. Формат даты и время нормальный
- * 11. Новые записи вверху - старые внизу
- * 12. Подтверждение закрытие и сохранение результата
- * 13. Кнопку удаления активности из списка
- * 14. Проверка ввода текста где есть большая буква (прИвет и привет разные)
- * 15. Несколько дел одновременно
- * 16. Добавить вкладку с идеями и статистикой
- */
 public class HelloApplication extends Application {
 
     public static void main(String[] args) {
@@ -36,7 +15,6 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Программа");
-
         //создать панель табов
         TabPane tabPane = new TabPane();
         //создать таб для маингрид пайн
@@ -48,7 +26,9 @@ public class HelloApplication extends Application {
         // от GridPane в отдельно классе, и установить её во второй таб
         Tab tab3 = new Tab();
         tab3.setText("Стата");
-
+        //вкладка для теста
+        Tab tab4 = new Tab();
+        tab4.setText("Для Теста");
         //передать в таб маин грид пейн
         MainGridPane mainGridPane = new MainGridPane();
         tab1.setContent(mainGridPane);
@@ -61,8 +41,15 @@ public class HelloApplication extends Application {
         tab2.setContent(tab2GridPane);
         tabPane.getTabs().add(tab2);
 
-        //вкладка 3
+        //вкладка 3, выводим пирог
+        Tab3StataPane tab3StataChart = new Tab3StataPane();
+        tab3.setContent(tab3StataChart);
         tabPane.getTabs().add(tab3);
+
+        //вкладка 4, для теста
+        Tab4TestPane tab4TestPane = new Tab4TestPane();
+        tab4.setContent(tab4TestPane);
+        tabPane.getTabs().add(tab4);
 
         primaryStage.setScene(new Scene(
                 tabPane, 800, 600
