@@ -13,9 +13,9 @@ public class Tab3StataPane extends GridPane {
 
                 //собираем данные для пирога
                 ObservableList<PieChart.Data> tab3StataPaneContent = FXCollections.observableArrayList(
-                        new PieChart.Data("Grapefruit", 13),
-                        new PieChart.Data("Orange", 25),
-                        new PieChart.Data("Plums", 10));
+                        new PieChart.Data("Программирование", 13),
+                        new PieChart.Data("Спорт", 25),
+                        new PieChart.Data("Бег", 10));
 
                 //это конструктор пирога
         PieChart tab3StataChart = new PieChart(tab3StataPaneContent);
@@ -26,7 +26,7 @@ public class Tab3StataPane extends GridPane {
         GridPane.setVgrow(tab3StataChart, Priority.ALWAYS);
 
 
-                tab3StataChart.setTitle("Пирожок 2");
+                tab3StataChart.setTitle("Статистика");
 
                 add(tab3StataChart, 0, 0);
     }
