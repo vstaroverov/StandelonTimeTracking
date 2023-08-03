@@ -32,7 +32,7 @@ public class HelloApplication extends Application {
         //передать в таб маин грид пейн
         MainGridPane mainGridPane = new MainGridPane();
         tab1.setContent(mainGridPane);
-        //передать таб в панель табов
+        //передать таб в панель табовв
         tabPane.getTabs().add(tab1);
         //передать паенль табов в сцену вместо маингридпей
 
